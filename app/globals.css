@@ -42,10 +42,11 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-custom-green: var(--custom-green);
+  --color-custom-purple: var(--custom-purple);
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -78,6 +79,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --custom-green: oklch(0.8572 0.2069 125.16);
+  --custom-purple: #8051DB;
 }
 
 .dark {
@@ -113,12 +115,15 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
   --custom-green: oklch(0.8572 0.2069 125.16);
+  /* custom purple (hex) */
+  --custom-purple: #6f4cd7;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -157,4 +162,17 @@ html {
     2px -2px 0 var(--color-custom-green),
     -2px 2px 0 var(--color-custom-green);
   -webkit-text-stroke: 2px var(--color-custom-green);
+}
+
+.text-outline-custom-purple {
+  text-shadow:
+    2px 0 0 var(--color-custom-purple),
+    -2px 0 0 var(--color-custom-purple),
+    0 2px 0 var(--color-custom-purple),
+    0 -2px 0 var(--color-custom-purple),
+    2px 2px 0 var(--color-custom-purple),
+    -2px -2px 0 var(--color-custom-purple),
+    2px -2px 0 var(--color-custom-purple),
+    -2px 2px 0 var(--color-custom-purple);
+  -webkit-text-stroke: 2px var(--color-custom-purple);
 }
