@@ -19,7 +19,7 @@ export default function Home() {
         <IntroScreen startClick={scrollToSecond} />
       </section>
 
-      <section ref={secondRef} className="h-[200dvh] md:h-dvh w-full snap-start bg-[#1E1E1E] flex items-center justify-center snap-y snap-mandatory overflow-y-auto">
+      <section ref={secondRef} className="h-[200dvh] md:h-dvh w-full snap-start bg-[#1E1E1E] flex items-center justify-center">
         <MainScreen />
       </section>
     </div>

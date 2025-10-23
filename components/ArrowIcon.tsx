@@ -25,7 +25,7 @@ export default function ArrowIcon({ direction, className = '', alt = 'arrow icon
   }[direction]
 
   // Compose classes. The original used text-custom-green and min-w-[30px]. Keep them as defaults.
-  const classes = `${rotationClass} text-custom-green min-w-[30px] ${className}`
+  const classes = `${rotationClass} text-custom-green min-w-[15px] ${className}`
 
   // Default intrinsic sizes for the asset (assumed original pointing right):
   const intrinsic = { width: 30, height: 68 }
