@@ -4,14 +4,12 @@ import { IoPersonOutline } from 'react-icons/io5'
 import { VscSettings } from 'react-icons/vsc'
 import { FaRegStar } from 'react-icons/fa'
 import { LuWrench } from 'react-icons/lu'
-import Image from 'next/image'
 
 export default function MainScreen() {
     return (
         <div className="w-full flex flex-col md:flex-row justify-center items-center">
-            <div className="w-full md:w-[50%] h-dvh snap-start">
-                <div className="w-full h-full flex justify-center items-center">
-                    <Image alt="profile pic" height="518" width="370" src="/placeholder_profile_pic.png" />
+            <div className="w-full md:w-[50%] h-dvh snap-start p-[40px]">
+                <div className="w-full h-full flex justify-center items-center mask-[url(/image_mask.svg)] bg-[url(/profile_pic.jpg)] bg-position-[33%] bg-size-[250%] 2xl:bg-cover mask-no-repeat mask-contain mask-center">
                 </div>
             </div>
             <div className="w-full md:w-[50%] h-dvh text-white p-x-4 snap-start">
