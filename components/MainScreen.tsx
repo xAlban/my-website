@@ -8,11 +8,10 @@ import { LuWrench } from "react-icons/lu";
 export default function MainScreen() {
     return (
         <div className="w-full flex flex-col md:flex-row justify-center items-center">
-            <div className="w-full md:w-[50%] h-dvh snap-start p-[40px]">
+            <div className="hidden md:block w-[50%] h-dvh snap-start p-[40px]">
                 <div className="w-full h-full flex justify-center items-center mask-[url(/image_mask.svg)] bg-[url(/profile_pic.jpg)] bg-position-[33%] bg-size-[250%] 2xl:bg-cover mask-no-repeat mask-contain mask-center"></div>
             </div>
-            <div className="w-full md:w-[50%] h-dvh text-white p-x-4 snap-start flex relative">
-                <div className="h-full w-[30px] bg-black skew-x-[16.6deg] hidden md:block"></div>
+            <div className="w-full md:w-[50%] h-dvh text-white p-x-4 snap-start flex">
                 <Tabs defaultValue="me" className="h-full w-full">
                     <TabsContent value="me">
                         <div className="h-full w-full flex flex-col justify-center gap-y-5 text-left">
