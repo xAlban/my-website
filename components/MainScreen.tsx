@@ -5,6 +5,8 @@ import { VscSettings } from 'react-icons/vsc'
 import { FaRegStar } from 'react-icons/fa'
 import { LuWrench } from 'react-icons/lu'
 import Image from 'next/image'
+import MeTabContent from './tab-content/MeTabContent'
+import SkillsTabContent from './tab-content/SkillsTabContent'
 
 export default function MainScreen() {
     return (
@@ -16,19 +18,14 @@ export default function MainScreen() {
             </div>
             <div className="w-full md:w-[50%] h-dvh text-white p-x-4 snap-start">
                 <Tabs defaultValue="me" className="h-full w-full">
-                    <TabsContent value="me">
-                        <div className="h-full w-full flex flex-col justify-center gap-y-5 text-left">
-                            <h2 className="text-custom-purple text-3xl">
-                                TECH ENTHUSIAST
-                            </h2>
-                            <p className="text-xl">
-                                New mobile phone ? Framework ? I&apos;ll be up to date! I&apos;m interested in all techs at aninternational level. That&apos;s why I&apos;m open to any opportunity abroad.Hobbies: Volleyball, Photography, Competitive Video-games (link flickr or include photos here)
-                            </p>
-                        </div>
+                    <TabsContent value="me" className="px-[40px]">
+                        <MeTabContent />
                     </TabsContent>
-                    <TabsContent value="skills">Skills</TabsContent>
-                    <TabsContent value="experiences">Experiences</TabsContent>
-                    <TabsContent value="projects">Projects</TabsContent>
+                    <TabsContent value="skills" className="px-[40px]">
+                        <SkillsTabContent />
+                    </TabsContent>
+                    <TabsContent value="experiences" className="px-[40px]">Experiences</TabsContent>
+                    <TabsContent value="projects" className="px-[40px]">Projects</TabsContent>
                     <TabsList className="w-full bg-transparent h-[80px]">
                         <TabsTrigger
                             className="text-white data-[state=active]:bg-custom-green data-[state=active]:text-black"
