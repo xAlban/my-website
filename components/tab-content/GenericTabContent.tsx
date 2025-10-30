@@ -8,7 +8,7 @@ interface GenericTabContentProps {
 export default function GenericTabContent(props: GenericTabContentProps) {
     const { children, title } = props;
     return (
-        <div className="h-full w-full flex flex-col justify-center gap-y-5 text-left">
+        <div className="h-full w-full flex flex-col justify-center gap-y-5 text-left overflow-y-auto">
             {
                 title && <h2 className="text-custom-purple text-3xl">
                     {title}
