@@ -6,6 +6,7 @@ import { FaRegStar } from "react-icons/fa";
 import { LuWrench } from "react-icons/lu";
 import MeTabContent from "./tab-content/MeTabContent";
 import SkillsTabContent from "./tab-content/SkillsTabContent";
+import ExperiencesTabContent from "./tab-content/ExperiencesTabContent";
 
 export default function MainScreen() {
     return (
@@ -15,14 +16,16 @@ export default function MainScreen() {
             </div>
             <div className="w-full md:w-[50%] h-dvh text-white p-x-4 snap-start flex">
                 <Tabs defaultValue="me" className="h-full w-full">
-                    <TabsContent value="me" className="px-[40px]">
+                    <TabsContent value="me" className="px-[40px] overflow-y-auto h-full">
                         <MeTabContent />
                     </TabsContent>
-                    <TabsContent value="skills" className="px-[40px]">
+                    <TabsContent value="skills" className="px-[40px] overflow-y-auto h-full">
                         <SkillsTabContent />
                     </TabsContent>
-                    <TabsContent value="experiences" className="px-[40px]">Experiences</TabsContent>
-                    <TabsContent value="projects" className="px-[40px]">Projects</TabsContent>
+                    <TabsContent value="experiences" className="px-[40px] overflow-y-auto h-full">
+                        <ExperiencesTabContent />
+                    </TabsContent>
+                    <TabsContent value="projects" className="px-[40px] overflow-y-auto h-full">Projects</TabsContent>
                     <TabsList className="w-full bg-transparent h-[80px]">
                         <TabsTrigger
                             className="text-white data-[state=active]:bg-custom-green data-[state=active]:text-black"
