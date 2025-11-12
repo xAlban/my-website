@@ -29,15 +29,14 @@ export default function SkillsTabContent() {
                                 <div className="flex-2 text-lg">
                                     {techSkill.name}
                                 </div>
-                                <div className="flex flex-3 flex-row gap-x-2 min-h-[32px]">
+                                <div className="flex flex-3 flex-row gap-x-2 min-h-[16px] md:min-h-[32px] justify-end">
                                     {Array.from({ length: 5 }, (_, i) => (
                                         <div
                                             key={i}
-                                            className={`${
-                                                i < techSkill.level
-                                                    ? "bg-custom-green"
-                                                    : ""
-                                            } flex-1 h-full`}
+                                            className={`${i < techSkill.level
+                                                ? "bg-custom-green"
+                                                : "bg-black"
+                                                } flex-1 h-full max-h-[32px] max-w-[44px]`}
                                         ></div>
                                     ))}
                                 </div>
@@ -56,15 +55,14 @@ export default function SkillsTabContent() {
                                 <div className="flex-2 text-lg">
                                     {languageSkill.name}
                                 </div>
-                                <div className="flex flex-3 flex-row gap-x-2 min-h-[32px]">
+                                <div className="flex flex-3 flex-row gap-x-2 min-h-[16px] md:min-h-[32px] justify-end">
                                     {Array.from({ length: 5 }, (_, i) => (
                                         <div
                                             key={i}
-                                            className={`${
-                                                i < languageSkill.level
-                                                    ? "bg-custom-green"
-                                                    : ""
-                                            } flex-1 h-full`}
+                                            className={`${i < languageSkill.level
+                                                ? "bg-custom-green"
+                                                : "bg-black"
+                                                } flex-1 h-full max-h-[32px] max-w-[44px]`}
                                         ></div>
                                     ))}
                                 </div>

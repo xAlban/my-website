@@ -30,7 +30,7 @@ export default function MainScreen() {
                         >
                             <div className="flex flex-col justify-center items-center h-full w-full">
                                 <IoPersonOutline />
-                                <div>ME</div>
+                                <div className="text-[10px] md:text-sm">ME</div>
                             </div>
                         </TabsTrigger>
                         <TabsTrigger
@@ -39,7 +39,7 @@ export default function MainScreen() {
                         >
                             <div className="flex flex-col justify-center items-center h-full w-full">
                                 <VscSettings />
-                                <div>SKILLS</div>
+                                <div className="text-[10px] md:text-sm">SKILLS</div>
                             </div>
                         </TabsTrigger>
                         <TabsTrigger
@@ -48,7 +48,7 @@ export default function MainScreen() {
                         >
                             <div className="flex flex-col justify-center items-center h-full w-full">
                                 <FaRegStar />
-                                <div>EXPERIENCES</div>
+                                <div className="text-[10px] md:text-sm">EXPERIENCES</div>
                             </div>
                         </TabsTrigger>
                         <TabsTrigger
@@ -57,7 +57,7 @@ export default function MainScreen() {
                         >
                             <div className="flex flex-col justify-center items-center h-full w-full">
                                 <LuWrench />
-                                <div>PROJECTS</div>
+                                <div className="text-[10px] md:text-sm">PROJECTS</div>
                             </div>
                         </TabsTrigger>
                     </TabsList>
