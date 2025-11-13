@@ -7,6 +7,7 @@ import { LuWrench } from "react-icons/lu";
 import MeTabContent from "./tab-content/MeTabContent";
 import SkillsTabContent from "./tab-content/SkillsTabContent";
 import ExperiencesTabContent from "./tab-content/ExperiencesTabContent";
+import ProjectsTabContent from "./tab-content/ProjectsTabContent";
 
 export default function MainScreen() {
     return (
@@ -25,7 +26,9 @@ export default function MainScreen() {
                     <TabsContent value="experiences" className="px-[40px] overflow-y-auto h-full">
                         <ExperiencesTabContent />
                     </TabsContent>
-                    <TabsContent value="projects" className="px-[40px] overflow-y-auto h-full">Projects</TabsContent>
+                    <TabsContent value="projects" className="px-[40px] overflow-y-auto h-full">
+                        <ProjectsTabContent />
+                    </TabsContent>
                     <TabsList className="w-full bg-transparent h-[80px]">
                         <TabsTrigger
                             className="text-white data-[state=active]:bg-custom-green data-[state=active]:text-black"

@@ -14,9 +14,6 @@ export default function ExperiencesTabContent() {
                 <li>Asynchronous collaboration within a small team. (Full remote)</li>
                 <li>Implement processes to support company growth and ensure timely deliveries.</li>
             </ul>
-            <p className="text-xl">
-                Check out in this video what I've worked on: link
-            </p>
             <div>
                 <h3 className="text-2xl text-custom-purple">Software Engineer @Actimage GmbH</h3>
                 <h3 className="text-xl text-custom-purple">August 2019 - November 2021</h3>
@@ -28,7 +25,7 @@ export default function ExperiencesTabContent() {
             </ul>
 
             <p className="text-xl">
-                Check out in this video what I've worked on: link
+                Check out the projects I've worked on in the Project tab
             </p>
         </GenericTabContent>
     )
