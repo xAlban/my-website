@@ -25,7 +25,7 @@ export default function ExperiencesTabContent() {
             </ul>
 
             <p className="text-xl">
-                Check out the projects I've worked on in the Project tab
+                Check out the projects I&apos;ve worked on in the Project tab
             </p>
         </GenericTabContent>
     )
