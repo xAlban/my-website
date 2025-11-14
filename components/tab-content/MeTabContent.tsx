@@ -2,14 +2,12 @@
 
 import React, { useState, useEffect } from 'react'
 import GenericTabContent from './GenericTabContent'
-import { Carousel, CarouselApi, CarouselContent, CarouselItem } from '../ui/carousel'
 import Link from 'next/link';
 
 let intervalId: null | number = null;
 
 export default function MeTabContent() {
     const [photos, setPhotos] = useState<string[]>([])
-    const [api, setApi] = React.useState<CarouselApi>()
 
     useEffect(() => {
         fetch('/api/photos')
@@ -38,28 +36,28 @@ export default function MeTabContent() {
                     Competitive Video-games
                 </li>
             </ul>
-            <Carousel
-                setApi={(newApi) => {
-                    setApi(newApi)
-                    if (intervalId) {
-                        clearInterval(intervalId)
-                    }
-                    intervalId = window.setInterval(() => {
-                        console.log('in interval')
-                        api?.scrollNext()
-                    }, 5000)
-                }}
-                opts={{ loop: true }}
-                className="flex items-center justify-center max-h-[600px]"
-            >
-                <CarouselContent className="h-full">
-                    {photos.map((photo, index) => (
-                        <CarouselItem key={index} className="w-full h-full max-h-[600px] flex items-center justify-center">
-                            <img src={`/photo_carousel/${photo}`} alt={photo} className="object-contain" />
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-            </Carousel>
+            <div className="h-[50dvh] overflow-x-auto flex flex-nowrap">
+                {photos.map((photo, index) => (
+                    <div
+                        key={index}
+                        className={`
+                            ${index !== 0 ? "-ml-[60px]" : ""}
+                            w-[75%] md:w-[50%] xl:w-[33%]
+                            h-full
+                            flex-shrink-0
+                            flex justify-center
+                            items-center
+                            mask-[url(/image_mask.svg)]
+                            bg-[url(/photo_carousel/${photo})]
+                            bg-position-[50%]
+                            bg-cover
+                            mask-no-repeat
+                            mask-contain
+                            mask-center
+                        `}
+                    ></div>
+                ))}
+            </div>
         </GenericTabContent>
     )
 }
