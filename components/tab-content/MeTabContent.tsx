@@ -38,21 +38,8 @@ export default function MeTabContent() {
                 {photos.map((photo, index) => (
                     <div
                         key={index}
-                        className={`
-                            ${index !== 0 ? "-ml-[60px]" : ""}
-                            w-[75%] md:w-[50%] xl:w-[33%]
-                            h-full
-                            flex-shrink-0
-                            flex justify-center
-                            items-center
-                            mask-[url(/image_mask.svg)]
-                            bg-[url(/photo_carousel/${photo})]
-                            bg-position-[50%]
-                            bg-cover
-                            mask-no-repeat
-                            mask-contain
-                            mask-center
-                        `}
+                        style={{ backgroundImage: `url(/photo_carousel/${photo})` }}
+                        className={`${index !== 0 ? "-ml-[60px] " : ""}w-[75%] md:w-[50%] xl:w-[33%] h-full flex-shrink-0 flex justify-center items-center mask-[url(/image_mask.svg)] bg-position-[50%] bg-cover mask-no-repeat mask-contain mask-center`}
                     ></div>
                 ))}
             </div>
