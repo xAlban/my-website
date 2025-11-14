@@ -4,8 +4,6 @@ import React, { useState, useEffect } from 'react'
 import GenericTabContent from './GenericTabContent'
 import Link from 'next/link';
 
-let intervalId: null | number = null;
-
 export default function MeTabContent() {
     const [photos, setPhotos] = useState<string[]>([])
 
