@@ -34,12 +34,12 @@ export default function MeTabContent() {
                     Competitive Video-games
                 </li>
             </ul>
-            <div className="h-[50dvh] overflow-x-auto flex flex-nowrap no-scrollbar">
+            <div className="h-[50dvh] overflow-x-auto flex flex-nowrap no-scrollbar overflow-y-hidden">
                 {photos.map((photo, index) => (
                     <div
                         key={index}
                         style={{ backgroundImage: `url(/photo_carousel/${photo})` }}
-                        className={`${index !== 0 ? "-ml-[60px] " : ""}w-[75%] md:w-[50%] xl:w-[33%] h-full flex-shrink-0 flex justify-center items-center mask-[url(/image_mask.svg)] bg-position-[50%] bg-cover mask-no-repeat mask-contain mask-center`}
+                        className={`${index !== 0 ? "-ml-[60px] " : ""}w-[75%] md:w-[50%] xl:w-[33%] hover:scale-110 transition-transform h-full flex-shrink-0 flex justify-center items-center mask-[url(/image_mask.svg)] bg-position-[50%] bg-cover mask-no-repeat mask-contain mask-center`}
                     ></div>
                 ))}
             </div>
