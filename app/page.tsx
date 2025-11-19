@@ -17,7 +17,7 @@ export default function Home() {
 
     return (
         // Page container with vertical snap — each child is full viewport height
-        <div className="h-dvh w-screen bg-black snap-mandatory snap-y overflow-y-auto">
+        <div className="h-dvh w-screen bg-black snap-mandatory snap-y overflow-y-auto no-scrollbar">
             <section className="h-dvh w-full snap-start bg-[url(/profile_pic.jpg)] md:bg-none bg-position-[33%] bg-size-[450%]">
                 <IntroScreen startClick={scrollToSecond} />
             </section>

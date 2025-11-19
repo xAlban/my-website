@@ -34,7 +34,7 @@ export default function MeTabContent() {
                     Competitive Video-games
                 </li>
             </ul>
-            <div className="h-[50dvh] overflow-x-auto flex flex-nowrap">
+            <div className="h-[50dvh] overflow-x-auto flex flex-nowrap no-scrollbar">
                 {photos.map((photo, index) => (
                     <div
                         key={index}
