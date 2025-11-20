@@ -3,7 +3,7 @@ import GenericTabContent from './GenericTabContent'
 
 export default function ExperiencesTabContent() {
     return (
-        <GenericTabContent title="EXPERIENCES">
+        <GenericTabContent title="EXPERIENCES" titleClassName="px-[40px]" containerClassName="px-[40px]">
             <div>
                 <h3 className="text-2xl text-custom-purple">Full Stack Developer @Veesual</h3>
                 <h3 className="text-xl text-custom-purple">November 2021 - August 2025</h3>

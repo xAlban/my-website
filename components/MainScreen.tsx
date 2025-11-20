@@ -104,7 +104,7 @@ export default function MainScreen() {
                             ref={(el) => {
                                 contentRefs.current[tab.id] = el;
                             }}
-                            className="flex flex-col justify-center px-[40px]"
+                            className="flex flex-col justify-center"
                         >
                             {tab.content}
 
@@ -121,10 +121,10 @@ export default function MainScreen() {
                         {TABS.map((tab) => (
                             <TabsTrigger
                                 key={tab.id}
-                                className="text-white data-[state=active]:bg-custom-green data-[state=active]:text-black"
+                                className="text-white data-[state=active]:bg-custom-green data-[state=active]:text-black skew-x-[21deg]"
                                 value={tab.id}
                             >
-                                <div className="flex flex-col justify-center items-center h-full w-full">
+                                <div className="flex flex-col justify-center items-center h-full w-full skew-x-[-21deg]">
                                     {tab.icon}
                                     <div className="text-[10px] md:text-sm">{tab.label}</div>
                                 </div>

@@ -16,7 +16,7 @@ export default function SkillsTabContent() {
         { name: "English", level: 4 },
     ];
     return (
-        <GenericTabContent title="SKILLS">
+        <GenericTabContent title="SKILLS" titleClassName="px-[40px]" containerClassName="px-[40px]">
             <div className="flex flex-col gap-y-8">
                 <div className="flex flex-col gap-y-4">
                     <h2 className="text-2xl text-custom-purple">Tech</h2>
