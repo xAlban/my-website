@@ -116,7 +116,7 @@ export default function MainScreen() {
                         </div>
                     ))}
                 </div>
-                <Tabs value={activeTab} onValueChange={handleTabClick} className="h-auto w-full">
+                <Tabs value={activeTab} onValueChange={handleTabClick} className="h-auto w-full md:w-[95%] overflow-x-clip md:overflow-x-visible">
                     <TabsList className="w-full bg-transparent h-[80px]">
                         {TABS.map((tab) => (
                             <TabsTrigger

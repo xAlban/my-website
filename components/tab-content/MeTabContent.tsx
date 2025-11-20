@@ -25,7 +25,7 @@ export default function MeTabContent() {
                 <p className="text-xl">
                     Hobbies:
                 </p>
-                <ul className="list-disc list-inside marker:text-custom-green">
+                <ul className="list-disc list-inside marker:text-custom-green text-xl">
                     <li>
                         Volleyball
                     </li>
@@ -37,7 +37,9 @@ export default function MeTabContent() {
                     </li>
                 </ul>
             </div>
-            <Carousel items={photos.map(photo => `/photo_carousel/${photo}`)} />
+            <div className="pt-4">
+                <Carousel items={photos.map(photo => `/photo_carousel/${photo}`)} />
+            </div>
         </GenericTabContent>
     )
 }
