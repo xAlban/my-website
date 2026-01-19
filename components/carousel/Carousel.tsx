@@ -7,7 +7,7 @@ interface CarouselProps {
   speed?: number;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ items, speed = 5000 }) => {
+const Carousel: React.FC<CarouselProps> = ({ items }) => {
   const [carouselItems, setCarouselItems] = useState<string[]>([]);
 
   useEffect(() => {
