@@ -47,7 +47,7 @@
 
 :root {
   --custom-green: oklch(0.8572 0.2069 125.16);
-  --custom-purple: #8051DB;
+  --custom-purple: #8051db;
   --radius: 0;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -130,19 +130,19 @@
 
 @font-face {
   font-family: "Shapiro";
-  src: url("../public/fonts/Shapiro-45WelterText.woff") format('woff');
+  src: url("../public/fonts/Shapiro-45WelterText.woff") format("woff");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Shapiro";
-  src: url("../public/fonts/Shapiro-75HeavyExtd.woff") format('woff');
+  src: url("../public/fonts/Shapiro-75HeavyExtd.woff") format("woff");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Shapiro";
-  src: url("../public/fonts/Shapiro-105MaxExtd.woff") format('woff');
+  src: url("../public/fonts/Shapiro-105MaxExtd.woff") format("woff");
   font-weight: 800;
 }
 
@@ -183,6 +183,6 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

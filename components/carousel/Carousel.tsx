@@ -25,7 +25,10 @@ const Carousel: React.FC<CarouselProps> = ({ items, speed = 5000 }) => {
   return (
     <div
       className="w-full overflow-hidden h-[50dvh]"
-      style={{ maskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)" }}
+      style={{
+        maskImage:
+          "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
+      }}
     >
       <div className="flex animate-scroll">
         {duplicatedItems.map((item, index) => (
