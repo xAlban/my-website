@@ -65,8 +65,8 @@ export default function MainScreen() {
         {/* Overlay for contrast */}
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="absolute bottom-12 left-6 md:left-12 z-10 max-w-5xl">
-          <h1 className="text-white font-bold text-4xl md:text-7xl leading-tight drop-shadow-lg flex flex-col items-start gap-2 uppercase">
+        <div className="absolute bottom-12 left-8 md:left-12 z-10 max-w-5xl">
+          <h1 className="text-white font-bold text-3xl md:text-6xl leading-tight drop-shadow-lg flex flex-col items-start gap-2 uppercase">
             <span>HELLO I&apos;M</span>
             <span className="relative inline-block px-4 py-1 ml-[-16px]">
               <span className="absolute inset-0 bg-custom-green skew-x-[-15deg]" />
