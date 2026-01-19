@@ -1,26 +1,26 @@
 import React, { useEffect, useRef } from "react";
-import MeTabContent from "./tab-content/MeTabContent";
-import SkillsTabContent from "./tab-content/SkillsTabContent";
-import ExperiencesTabContent from "./tab-content/ExperiencesTabContent";
-import ProjectsTabContent from "./tab-content/ProjectsTabContent";
+import MeSection from "./section/MeSection";
+import SkillSection from "./section/SkillSection";
+import ExperienceSection from "./section/ExperienceSection";
+import ProjectSection from "./section/ProjectSection";
 import { useActiveSection } from "@/context/ActiveSectionContext";
 
 const SECTIONS = [
   {
     id: "me",
-    content: <MeTabContent />,
+    content: <MeSection />,
   },
   {
     id: "skills",
-    content: <SkillsTabContent />,
+    content: <SkillSection />,
   },
   {
     id: "experiences",
-    content: <ExperiencesTabContent />,
+    content: <ExperienceSection />,
   },
   {
     id: "projects",
-    content: <ProjectsTabContent />,
+    content: <ProjectSection />,
   },
 ];
 
