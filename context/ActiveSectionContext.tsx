@@ -12,7 +12,7 @@ const ActiveSectionContext = createContext<
 >(undefined);
 
 export function ActiveSectionProvider({ children }: { children: ReactNode }) {
-  const [activeSection, setActiveSection] = useState("me");
+  const [activeSection, setActiveSection] = useState("hero");
 
   const value = React.useMemo(
     () => ({ activeSection, setActiveSection }),
