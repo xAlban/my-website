@@ -4,11 +4,13 @@ import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { FaLinkedin, FaGithub, FaBars, FaTimes } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { useActiveSection } from "@/context/ActiveSectionContext";
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { activeSection } = useActiveSection();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,9 +82,24 @@ export default function Header() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-white hover:text-custom-green transition-colors font-medium text-sm uppercase tracking-wide"
+              className="relative px-2 py-1 group h-[40px]"
             >
-              {item.label}
+              <span
+                className={cn(
+                  "absolute inset-0 bg-custom-green skew-x-[-15deg] transition-all duration-300 ease-in-out",
+                  activeSection === item.id ? "opacity-100" : "opacity-0"
+                )}
+              />
+              <span
+                className={cn(
+                  "relative z-10 font-medium font-bold text-sm uppercase tracking-wide transition-colors duration-300",
+                  activeSection === item.id
+                    ? "text-black"
+                    : "text-white group-hover:text-custom-green"
+                )}
+              >
+                {item.label}
+              </span>
             </button>
           ))}
         </nav>

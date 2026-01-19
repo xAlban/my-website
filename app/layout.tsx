@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
+import { ActiveSectionProvider } from "@/context/ActiveSectionContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,8 +30,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
         style={{ backgroundColor: "#000" }}
       >
-        <Header />
-        {children}
+        <ActiveSectionProvider>
+          <Header />
+          {children}
+        </ActiveSectionProvider>
       </body>
     </html>
   );

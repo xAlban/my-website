@@ -9,6 +9,7 @@ import SkillsTabContent from "./tab-content/SkillsTabContent";
 import ExperiencesTabContent from "./tab-content/ExperiencesTabContent";
 import ProjectsTabContent from "./tab-content/ProjectsTabContent";
 import { Separator } from "./ui/separator";
+import { useActiveSection } from "@/context/ActiveSectionContext";
 
 // ---- Tabs array for each content in the main screen ----
 const TABS = [
@@ -41,6 +42,7 @@ const TABS = [
 export default function MainScreen() {
   // ---- Default value of active tab is the first one ----
   const [activeTab, setActiveTab] = useState(TABS[0].id);
+  const { setActiveSection } = useActiveSection();
 
   // ---- Ref object with each content element for scroll syncing between tab content and tab triggers ----
   const contentRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
@@ -51,6 +53,7 @@ export default function MainScreen() {
   const handleTabClick = (tabId: string) => {
     isScrolling.current = true;
     setActiveTab(tabId);
+    setActiveSection(tabId);
 
     const element = contentRefs.current[tabId];
     if (element) {
@@ -73,6 +76,7 @@ export default function MainScreen() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveTab(entry.target.id);
+            setActiveSection(entry.target.id);
           }
         });
       },
@@ -91,7 +95,7 @@ export default function MainScreen() {
         if (ref) observer.unobserve(ref);
       });
     };
-  }, []);
+  }, [setActiveSection]);
 
   return (
     <div className="w-full flex flex-col md:flex-row justify-center items-start">
