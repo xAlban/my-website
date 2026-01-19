@@ -44,7 +44,6 @@ export default function MainScreen() {
 
   // ---- Ref object with each content element for scroll syncing between tab content and tab triggers ----
   const contentRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // ---- To prevent intersection observer from triggering while scrolling programmatically ----
   const isScrolling = useRef(false);
@@ -52,10 +51,14 @@ export default function MainScreen() {
   const handleTabClick = (tabId: string) => {
     isScrolling.current = true;
     setActiveTab(tabId);
-    contentRefs.current[tabId]?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    
+    const element = contentRefs.current[tabId];
+    if (element) {
+        // Offset for the fixed header (approx 100px)
+        const y = element.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+
     setTimeout(() => {
       isScrolling.current = false;
     }, 1000);
@@ -73,7 +76,7 @@ export default function MainScreen() {
           }
         });
       },
-      { root: scrollContainerRef.current, threshold: 0.5 }
+      { threshold: 0.3 } // Uses viewport as root
     );
 
     // ---- Observe each content element ----
@@ -91,15 +94,12 @@ export default function MainScreen() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col md:flex-row justify-center items-center">
-      <div className="hidden md:block w-[50%] h-dvh snap-start p-[40px]">
+    <div className="w-full flex flex-col md:flex-row justify-center items-start">
+      <div className="hidden md:block w-[50%] h-dvh sticky top-0 p-[40px]">
         <div className="w-full h-full flex justify-center items-center mask-[url(/image_mask.svg)] bg-[url(/profile_pic.jpg)] bg-position-[33%] bg-size-[250%] 2xl:bg-cover mask-no-repeat mask-contain mask-center"></div>
       </div>
-      <div className="w-full md:w-[50%] h-dvh text-white p-x-4 snap-start flex flex-col">
-        <div
-          className="overflow-y-auto flex flex-col gap-y-8"
-          ref={scrollContainerRef}
-        >
+      <div className="w-full md:w-[50%] text-white px-4 flex flex-col pt-24 pb-8">
+        <div className="flex flex-col gap-y-8">
           {TABS.map((tab, index) => (
             <div
               key={tab.id}
@@ -107,7 +107,7 @@ export default function MainScreen() {
               ref={(el) => {
                 contentRefs.current[tab.id] = el;
               }}
-              className="flex flex-col justify-center"
+              className="flex flex-col justify-center scroll-mt-28"
             >
               {tab.content}
 
@@ -119,26 +119,28 @@ export default function MainScreen() {
             </div>
           ))}
         </div>
-        <Tabs
-          value={activeTab}
-          onValueChange={handleTabClick}
-          className="h-auto w-full md:w-[95%] overflow-x-clip md:overflow-x-visible"
-        >
-          <TabsList className="w-full bg-transparent h-[80px]">
-            {TABS.map((tab) => (
-              <TabsTrigger
-                key={tab.id}
-                className="text-white data-[state=active]:bg-custom-green data-[state=active]:text-black skew-x-[21deg]"
-                value={tab.id}
-              >
-                <div className="flex flex-col justify-center items-center h-full w-full skew-x-[-21deg]">
-                  {tab.icon}
-                  <div className="text-[10px] md:text-sm">{tab.label}</div>
-                </div>
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </Tabs>
+        <div className="sticky bottom-0 bg-black/90 backdrop-blur z-10 py-4 mt-8">
+            <Tabs
+              value={activeTab}
+              onValueChange={handleTabClick}
+              className="h-auto w-full md:w-[95%] overflow-x-clip md:overflow-x-visible mx-auto"
+            >
+              <TabsList className="w-full bg-transparent h-[80px]">
+                {TABS.map((tab) => (
+                  <TabsTrigger
+                    key={tab.id}
+                    className="text-white data-[state=active]:bg-custom-green data-[state=active]:text-black skew-x-[21deg]"
+                    value={tab.id}
+                  >
+                    <div className="flex flex-col justify-center items-center h-full w-full skew-x-[-21deg]">
+                      {tab.icon}
+                      <div className="text-[10px] md:text-sm">{tab.label}</div>
+                    </div>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </Tabs>
+        </div>
       </div>
     </div>
   );
