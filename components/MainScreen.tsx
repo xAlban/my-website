@@ -53,11 +53,27 @@ export default function MainScreen() {
   }, [setActiveSection]);
 
   return (
-    <div className="w-full flex flex-col md:flex-row justify-center items-start">
-      <div className="hidden md:block w-[50%] h-dvh sticky top-0 p-[40px]">
-        <div className="w-full h-full flex justify-center items-center mask-[url(/image_mask.svg)] bg-[url(/profile_pic.jpg)] bg-position-[33%] bg-size-[250%] 2xl:bg-cover mask-no-repeat mask-contain mask-center"></div>
+    <div className="w-full flex flex-col items-center bg-black">
+      {/* Hero Section */}
+      <div
+        id="hero"
+        ref={(el) => {
+          contentRefs.current["hero"] = el;
+        }}
+        className="relative w-full h-dvh bg-[url(/profile_pic.jpg)] bg-cover bg-center bg-no-repeat"
+      >
+        {/* Overlay for contrast */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="absolute bottom-12 left-6 md:left-12 z-10 max-w-4xl">
+          <h1 className="text-white font-bold text-4xl md:text-6xl leading-tight drop-shadow-lg">
+            Hello I&apos;m Alban ELEZI Software engineer looking for work.
+          </h1>
+        </div>
       </div>
-      <div className="w-full md:w-[50%] text-white px-4 flex flex-col pt-24 pb-8">
+
+      {/* Main Content */}
+      <div className="w-full max-w-4xl text-white px-4 flex flex-col pb-8">
         <div className="flex flex-col">
           {SECTIONS.map((section) => (
             <div
