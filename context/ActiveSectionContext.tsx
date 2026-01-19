@@ -7,9 +7,9 @@ type ActiveSectionContextType = {
   setActiveSection: (section: string) => void;
 };
 
-const ActiveSectionContext = createContext<ActiveSectionContextType | undefined>(
-  undefined
-);
+const ActiveSectionContext = createContext<
+  ActiveSectionContextType | undefined
+>(undefined);
 
 export function ActiveSectionProvider({ children }: { children: ReactNode }) {
   const [activeSection, setActiveSection] = useState("me");
