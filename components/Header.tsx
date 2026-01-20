@@ -113,7 +113,7 @@ export default function Header() {
             asChild
           >
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/alban-elezi"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
@@ -128,7 +128,7 @@ export default function Header() {
             asChild
           >
             <a
-              href="https://github.com/"
+              href="https://github.com/xAlban"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
@@ -176,7 +176,7 @@ export default function Header() {
 
         <div className="flex gap-6 mt-4">
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/alban-elezi"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-custom-green transition-colors"
@@ -185,7 +185,7 @@ export default function Header() {
             <FaLinkedin className="w-8 h-8" />
           </a>
           <a
-            href="https://github.com/"
+            href="https://github.com/xAlban"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-custom-green transition-colors"
