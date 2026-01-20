@@ -92,7 +92,7 @@ export default function Header() {
               />
               <span
                 className={cn(
-                  "relative z-10 font-medium text-sm uppercase tracking-wide transition-colors duration-300",
+                  "relative z-10 font-bold text-sm uppercase tracking-wide transition-colors duration-300",
                   activeSection === item.id
                     ? "text-black"
                     : "text-white group-hover:text-custom-green"
