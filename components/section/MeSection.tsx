@@ -17,7 +17,7 @@ export default function MeSection() {
 
   return (
     <div className="w-full h-full flex flex-col md:flex-row gap-y-5 text-left py-4">
-      <div className="pt-4 flex-1 max-h-[50svh] md:max-h-svh">
+      <div className="flex-1 max-h-[50%] md:max-h-[70%]">
         <Carousel items={photos.map((photo) => `/photo_carousel/${photo}`)} />
       </div>
       <div className="flex-1">

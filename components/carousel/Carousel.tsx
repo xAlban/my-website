@@ -1,44 +1,54 @@
 "use client";
-import { useEffect, useState } from "react";
-import "./Carousel.css";
+
+import * as React from "react";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel as CarouselPrimitive,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 interface CarouselProps {
   items: string[];
-  speed?: number;
+  delay?: number;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ items }) => {
-  const [carouselItems, setCarouselItems] = useState<string[]>([]);
-
-  useEffect(() => {
-    if (items.length > 0) {
-      setCarouselItems(items);
-    }
-  }, [items]);
-
-  if (carouselItems.length === 0) {
-    return null; // Or a loading indicator
+const Carousel: React.FC<CarouselProps> = ({ items, delay = 3000 }) => {
+  if (!items || items.length === 0) {
+    return null;
   }
 
-  const duplicatedItems = [...carouselItems, ...carouselItems];
-
   return (
-    <div
-      className="w-full overflow-hidden h-full"
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
-      }}
-    >
-      <div className="flex animate-scroll">
-        {duplicatedItems.map((item, index) => (
-          <div
-            key={index}
-            style={{ backgroundImage: `url(${item})` }}
-            className={`${index !== 0 ? "-ml-[60px] " : ""}w-[75%] md:w-[50%] xl:w-[33%] h-[50dvh] flex-shrink-0 bg-cover bg-center hover:scale-110 transition-transform mask-[url(/image_mask.svg)] bg-position-[50%] mask-no-repeat mask-contain mask-center`}
-          />
-        ))}
-      </div>
+    <div className="w-full h-full overflow-hidden">
+      <CarouselPrimitive
+        opts={{
+          loop: true,
+        }}
+        plugins={[
+          Autoplay({
+            delay: delay,
+            stopOnInteraction: false,
+            stopOnMouseEnter: false,
+          }),
+        ]}
+        className="w-full h-full"
+      >
+        <CarouselContent className="ml-0">
+          {items.map((item, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-0"
+            >
+              <div className="w-full p-2">
+                <div
+                  style={{ backgroundImage: `url(${item})` }}
+                  className="aspect-square w-full bg-cover bg-center"
+                />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </CarouselPrimitive>
     </div>
   );
 };

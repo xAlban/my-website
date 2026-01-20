@@ -86,7 +86,7 @@ export default function MainScreen() {
             ref={(el) => {
               contentRefs.current[section.id] = el;
             }}
-            className="flex flex-col justify-center min-h-svh scroll-mt-28 p-4"
+            className="flex flex-col justify-center min-h-svh md:min-h-[80svh] scroll-mt-28"
           >
             {section.content}
           </div>
