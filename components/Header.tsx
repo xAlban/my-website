@@ -65,7 +65,7 @@ export default function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 h-16 bg-black border-b-[3px] border-custom-green transition-transform duration-300 ease-in-out",
+          "fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 h-16 bg-black transition-transform duration-300 ease-in-out",
           isVisible || isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         )}
       >
@@ -150,6 +150,9 @@ export default function Header() {
             <FaBars className="w-6 h-6" />
           )}
         </button>
+
+        {/* Gradient Bottom Bar */}
+        <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[linear-gradient(to_right,black_0%,var(--color-custom-green)_25%,var(--color-custom-green)_75%,black_100%)]" />
       </header>
 
       {/* Mobile Menu Overlay */}
