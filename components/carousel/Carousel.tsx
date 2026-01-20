@@ -35,10 +35,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, delay = 3000 }) => {
       >
         <CarouselContent className="ml-0">
           {items.map((item, index) => (
-            <CarouselItem
-              key={index}
-              className="pl-0"
-            >
+            <CarouselItem key={index} className="pl-0">
               <div className="w-full p-2">
                 <div
                   style={{ backgroundImage: `url(${item})` }}
