@@ -65,11 +65,11 @@ export default function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 h-16 bg-black transition-transform duration-300 ease-in-out",
+          "fixed top-0 left-0 right-0 z-100 flex items-center justify-between px-6 h-16 bg-black transition-transform duration-300 ease-in-out",
           isVisible || isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         )}
       >
-        <div className="flex flex-col z-[110] relative">
+        <div className="flex flex-col z-110 relative">
           <div className="font-bold text-white text-xl tracking-wider">
             ALBAN ELEZI
           </div>
@@ -92,7 +92,7 @@ export default function Header() {
               />
               <span
                 className={cn(
-                  "relative z-10 font-medium font-bold text-sm uppercase tracking-wide transition-colors duration-300",
+                  "relative z-10 font-medium text-sm uppercase tracking-wide transition-colors duration-300",
                   activeSection === item.id
                     ? "text-black"
                     : "text-white group-hover:text-custom-green"
@@ -140,7 +140,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white z-[110] relative focus:outline-none p-2"
+          className="md:hidden text-white z-110 relative focus:outline-none p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -158,7 +158,7 @@ export default function Header() {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-black z-[90] flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 bg-black z-90 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out md:hidden",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >

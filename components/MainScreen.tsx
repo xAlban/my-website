@@ -60,7 +60,7 @@ export default function MainScreen() {
         ref={(el) => {
           contentRefs.current["hero"] = el;
         }}
-        className="relative w-full h-dvh bg-[url(/profile_pic.jpg)] bg-cover bg-center bg-no-repeat"
+        className="relative w-full h-dvh bg-[url(/profile_pic.jpg)] bg-cover bg-position-[35%] md:bg-center bg-no-repeat"
       >
         {/* Overlay for contrast */}
         <div className="absolute inset-0 bg-black/40"></div>
