@@ -16,9 +16,14 @@ export default function MeSection() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col gap-y-5 text-left py-4">
-      <h2 className="text-custom-purple text-3xl px-[40px]">TECH ENTHUSIAST</h2>
-      <div>
+    <div className="w-full h-full flex flex-col md:flex-row gap-y-5 text-left py-4">
+      <div className="pt-4 flex-1 max-h-[50svh] md:max-h-svh">
+        <Carousel items={photos.map((photo) => `/photo_carousel/${photo}`)} />
+      </div>
+      <div className="flex-1">
+        <h2 className="text-custom-purple text-3xl px-[40px]">
+          TECH ENTHUSIAST
+        </h2>
         <div className="px-[40px]">
           <p className="text-xl">
             New mobile phone ? Framework ? I&apos;ll be up to date!
@@ -39,9 +44,6 @@ export default function MeSection() {
             </li>
             <li>Competitive Video-games</li>
           </ul>
-        </div>
-        <div className="pt-4">
-          <Carousel items={photos.map((photo) => `/photo_carousel/${photo}`)} />
         </div>
       </div>
     </div>

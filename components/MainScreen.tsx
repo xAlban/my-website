@@ -60,7 +60,7 @@ export default function MainScreen() {
         ref={(el) => {
           contentRefs.current["hero"] = el;
         }}
-        className="relative w-full h-dvh bg-[url(/profile_pic.jpg)] bg-cover bg-position-[35%] md:bg-center bg-no-repeat"
+        className="relative w-full h-svh bg-[url(/profile_pic.jpg)] bg-cover bg-position-[35%] md:bg-center bg-no-repeat"
       >
         {/* Overlay for contrast */}
         <div className="absolute inset-0 bg-black/40"></div>
@@ -78,21 +78,19 @@ export default function MainScreen() {
       </div>
 
       {/* Main Content */}
-      <div className="w-full max-w-4xl text-white px-4 flex flex-col pb-8">
-        <div className="flex flex-col">
-          {SECTIONS.map((section) => (
-            <div
-              key={section.id}
-              id={section.id}
-              ref={(el) => {
-                contentRefs.current[section.id] = el;
-              }}
-              className="flex flex-col justify-center min-h-dvh scroll-mt-28 p-4"
-            >
-              {section.content}
-            </div>
-          ))}
-        </div>
+      <div className="w-full text-white px-4 flex flex-col pb-8 bg-custom-gray">
+        {SECTIONS.map((section) => (
+          <div
+            key={section.id}
+            id={section.id}
+            ref={(el) => {
+              contentRefs.current[section.id] = el;
+            }}
+            className="flex flex-col justify-center min-h-svh scroll-mt-28 p-4"
+          >
+            {section.content}
+          </div>
+        ))}
       </div>
     </div>
   );

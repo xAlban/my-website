@@ -24,7 +24,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
 
   return (
     <div
-      className="w-full overflow-hidden h-[50dvh]"
+      className="w-full overflow-hidden h-full"
       style={{
         maskImage:
           "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",

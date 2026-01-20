@@ -43,11 +43,13 @@
   --radius-xl: calc(var(--radius) + 4px);
   --color-custom-green: var(--custom-green);
   --color-custom-purple: var(--custom-purple);
+  --color-custom-gray: var(--custom-gray);
 }
 
 :root {
   --custom-green: oklch(0.8572 0.2069 125.16);
   --custom-purple: #8051db;
+  --custom-gray: #525252;
   --radius: 0;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -85,6 +87,7 @@
 .dark {
   --custom-green: oklch(0.8572 0.2069 125.16);
   --custom-purple: #6f4cd7;
+  --custom-gray: #525252;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -174,6 +177,19 @@ html {
     2px -2px 0 var(--color-custom-purple),
     -2px 2px 0 var(--color-custom-purple);
   -webkit-text-stroke: 2px var(--color-custom-purple);
+}
+
+.text-outline-custom-gray {
+  text-shadow:
+    2px 0 0 var(--color-custom-gray),
+    -2px 0 0 var(--color-custom-gray),
+    0 2px 0 var(--color-custom-gray),
+    0 -2px 0 var(--color-custom-gray),
+    2px 2px 0 var(--color-custom-gray),
+    -2px -2px 0 var(--color-custom-gray),
+    2px -2px 0 var(--color-custom-gray),
+    -2px 2px 0 var(--color-custom-gray);
+  -webkit-text-stroke: 2px var(--color-custom-gray);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
