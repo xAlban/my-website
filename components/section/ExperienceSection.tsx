@@ -2,16 +2,16 @@ import React from "react";
 
 export default function ExperienceSection() {
   return (
-    <div className="w-full flex flex-col gap-y-5 text-left py-4">
-      <h2 className="text-custom-purple text-3xl px-[40px]">EXPERIENCES</h2>
-      <div className="px-[40px]">
+    <div className="w-full h-full flex flex-col justify-evenly md:flex-row gap-y-5 gap-x-24 text-left pb-4 pt-24">
+      <div className="flex flex-1 max-w-[1000px] max-h-[50%] md:max-h-[70%] items-center">
+        <h2 className="text-white font-bold text-2xl md:text-6xl">
+          EXPERIENCES
+        </h2>
+      </div>
+      <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 px-[40px] py-12">
         <div>
-          <h3 className="text-2xl text-custom-purple">
-            Full Stack Developer @Veesual
-          </h3>
-          <h3 className="text-xl text-custom-purple">
-            November 2021 - August 2025
-          </h3>
+          <h3 className="text-2xl">Full Stack Developer @Veesual</h3>
+          <h3 className="text-xl">November 2021 - August 2025</h3>
         </div>
         <ul className="list-disc list-inside marker:text-custom-green">
           <li>Web development using React, TypeScript, and Redux Toolkit.</li>
@@ -23,22 +23,14 @@ export default function ExperienceSection() {
           </li>
         </ul>
         <div>
-          <h3 className="text-2xl text-custom-purple">
-            Software Engineer @Actimage GmbH
-          </h3>
-          <h3 className="text-xl text-custom-purple">
-            August 2019 - November 2021
-          </h3>
+          <h3 className="text-2xl">Software Engineer @Actimage GmbH</h3>
+          <h3 className="text-xl">August 2019 - November 2021</h3>
         </div>
         <ul className="list-disc list-inside marker:text-custom-green">
           <li>Augmented Reality researches with React Native</li>
           <li>Teamworking and task organization</li>
           <li>Cross-platform mobile development</li>
         </ul>
-
-        <p className="text-xl">
-          Check out the projects I&apos;ve worked on in the Project tab
-        </p>
       </div>
     </div>
   );

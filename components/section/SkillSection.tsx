@@ -15,12 +15,14 @@ export default function SkillSection() {
     { name: "English", level: 4 },
   ];
   return (
-    <div className="w-full flex flex-col gap-y-5 text-left py-4">
-      <h2 className="text-custom-purple text-3xl px-[40px]">SKILLS</h2>
-      <div className="px-[40px]">
+    <div className="w-full h-full flex flex-col justify-evenly md:flex-row gap-y-5 gap-x-24 text-left pb-4 pt-24">
+      <div className="flex flex-1 max-w-[1000px] max-h-[50%] md:max-h-[70%] items-center">
+        <h2 className="text-white font-bold text-2xl md:text-6xl">SKILLS</h2>
+      </div>
+      <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 px-[40px] py-12">
         <div className="flex flex-col gap-y-8">
           <div className="flex flex-col gap-y-4">
-            <h2 className="text-2xl text-custom-purple">Tech</h2>
+            <h2 className="text-2xl">Tech</h2>
             <div className="flex flex-col gap-y-2">
               {techSkills.map((techSkill) => (
                 <div
@@ -43,7 +45,7 @@ export default function SkillSection() {
             </div>
           </div>
           <div className="flex flex-col gap-y-4">
-            <h2 className="text-2xl text-custom-purple">Languages</h2>
+            <h2 className="text-2xl">Languages</h2>
             <div className="flex flex-col gap-y-2">
               {languageSkills.map((languageSkill) => (
                 <div
