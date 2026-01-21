@@ -151,6 +151,7 @@
 
 html {
   font-family: Shapiro;
+  @apply snap-y snap-mandatory scroll-smooth;
 }
 
 .text-outline-custom-green {

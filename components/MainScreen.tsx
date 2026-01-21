@@ -60,7 +60,7 @@ export default function MainScreen() {
         ref={(el) => {
           contentRefs.current["hero"] = el;
         }}
-        className="relative w-full h-svh bg-[url(/profile_pic.jpg)] bg-cover bg-position-[35%] md:bg-center bg-no-repeat"
+        className="relative w-full h-svh bg-[url(/profile_pic.jpg)] bg-cover bg-position-[35%] md:bg-center bg-no-repeat snap-start"
       >
         {/* Overlay for contrast */}
         <div className="absolute inset-0 bg-black/40"></div>
@@ -86,7 +86,7 @@ export default function MainScreen() {
             ref={(el) => {
               contentRefs.current[section.id] = el;
             }}
-            className="flex flex-col justify-items-start w-full min-h-svh md:min-h-[80svh] scroll-mt-28"
+            className="flex flex-col justify-items-start w-full min-h-svh md:min-h-[80svh] snap-start"
           >
             {section.content}
           </div>
