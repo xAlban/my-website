@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -28,32 +29,43 @@ const projects = [
 export default function ProjectSection() {
   return (
     <div className="w-full h-full flex flex-col justify-evenly items-center gap-y-5 gap-x-24 text-left pb-4 pt-24">
-      <div className="flex flex-1 max-w-[1000px] max-h-[50%] md:max-h-[70%] items-center w-full px-12 md:px-0">
+      <div className="flex flex-1 max-h-[50%] md:max-h-[70%] items-center w-full px-12 md:px-0 justify-center">
         <h2>PROJECTS</h2>
       </div>
-      <div className="flex flex-col max-w-[1000px] w-full flex-1 justify-center gap-20 md:px-[40px] py-12">
+      <div className="flex flex-col w-full min-h-[50svh] flex-1 justify-center gap-20 md:px-[40px] py-12">
         <Carousel
           opts={{
             align: "start",
             loop: false,
           }}
-          className="w-full"
+          className="w-full h-full"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="min-h-[50svh]">
             {projects.map((project, index) => (
               <CarouselItem
                 key={index}
                 className="pl-4 basis-[85%] md:basis-[30%]"
               >
-                <div className="h-full p-6 border rounded-xl bg-card text-card-foreground shadow-sm bg-white/5 flex flex-col">
-                  <h3 className="text-2xl mb-4 min-h-[64px] flex items-center">
-                    {project.title}
-                  </h3>
-                  <ul className="list-disc list-inside marker:text-custom-green space-y-2">
-                    {project.description.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                <div className="h-full border rounded-xl bg-card text-card-foreground shadow-sm bg-white/5 flex flex-col overflow-hidden">
+                  <div className="aspect-square w-full relative">
+                    <Image
+                      src="/profile_pic.jpg"
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 85vw, 30vw"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-2xl mb-4 min-h-[64px] flex items-center">
+                      {project.title}
+                    </h3>
+                    <ul className="list-disc list-inside marker:text-custom-green space-y-2">
+                      {project.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </CarouselItem>
             ))}
