@@ -3,6 +3,7 @@ import React from "react";
 export default function SkillSection() {
   const techSkills = [
     { name: "React", level: 5 },
+    { name: "Redux Toolkit", level: 4 },
     { name: "React Native", level: 3 },
     { name: "TypeScript", level: 4 },
     { name: "HTML/CSS", level: 4 },
