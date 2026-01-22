@@ -7,6 +7,7 @@ export default function SkillSection() {
     { name: "React Native", level: 3 },
     { name: "TypeScript", level: 4 },
     { name: "HTML/CSS", level: 4 },
+    { name: "AI", level: 2 },
   ];
 
   const languageSkills = [
@@ -18,11 +19,11 @@ export default function SkillSection() {
   return (
     <div className="w-full h-full flex flex-col justify-evenly md:flex-row gap-y-5 gap-x-24 text-left pb-4 pt-24">
       <div className="flex flex-1 max-w-[1000px] max-h-[50%] md:max-h-[70%] items-center">
-        <h2 className="text-white font-bold text-2xl md:text-6xl">SKILLS</h2>
+        <h2>SKILLS</h2>
       </div>
       <div className="flex flex-col max-w-[1000px] flex-1 gap-20 md:px-[40px] py-12">
         <div className="flex flex-col gap-y-12">
-          <h2 className="font-bold text-2xl md:text-4xl">Tech</h2>
+          <h3>Tech</h3>
           <div className="flex flex-col gap-y-10">
             {techSkills.map((techSkill) => (
               <div
@@ -47,7 +48,7 @@ export default function SkillSection() {
           </div>
         </div>
         <div className="flex flex-col gap-y-12">
-          <h2 className="font-bold text-2xl md:text-4xl">Languages</h2>
+          <h3>Languages</h3>
           <div className="flex flex-col gap-y-10">
             {languageSkills.map((languageSkill) => (
               <div
