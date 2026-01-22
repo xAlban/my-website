@@ -37,7 +37,7 @@ export default function SkillSection() {
                       key={i}
                       className={`${
                         i < techSkill.level ? "bg-custom-green" : "bg-black"
-                      } flex-1 h-full max-h-[32px] max-w-[44px]`}
+                      } flex-1 h-full max-h-[32px] max-w-[44px] skew-x-[-15deg]`}
                     ></div>
                   ))}
                 </div>
@@ -62,7 +62,7 @@ export default function SkillSection() {
                       key={i}
                       className={`${
                         i < languageSkill.level ? "bg-custom-green" : "bg-black"
-                      } flex-1 h-full max-h-[32px] max-w-[44px]`}
+                      } flex-1 h-full max-h-[32px] max-w-[44px] skew-x-[-15deg]`}
                     ></div>
                   ))}
                 </div>
