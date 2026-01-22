@@ -8,7 +8,7 @@ export default function ExperienceSection() {
           EXPERIENCES
         </h2>
       </div>
-      <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 px-[40px] py-12">
+      <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 md:px-[40px] py-12">
         <div>
           <h3 className="text-2xl">Full Stack Developer @Veesual</h3>
           <h3 className="text-xl">November 2021 - August 2025</h3>

@@ -6,7 +6,7 @@ export default function ProjectSection() {
       <div className="flex flex-1 max-w-[1000px] max-h-[50%] md:max-h-[70%] items-center">
         <h2 className="text-white font-bold text-2xl md:text-6xl">PROJECTS</h2>
       </div>
-      <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 px-[40px] py-12">
+      <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 md:px-[40px] py-12">
         <div className="flex flex-row w-full">
           <div>
             <h3 className="text-2xl">

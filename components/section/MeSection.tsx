@@ -20,7 +20,7 @@ export default function MeSection() {
       <div className="flex flex-1 max-w-[1000px] max-h-[50%] md:max-h-[70%] items-center">
         <Carousel items={photos.map((photo) => `/photo_carousel/${photo}`)} />
       </div>
-      <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 px-[40px] py-12">
+      <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 md:px-[40px] py-12">
         <h2 className="text-white font-bold text-2xl md:text-6xl">ABOUT</h2>
         <p className="text-xl md:text-3xl">
           New mobile phone ? Framework ? I&apos;ll be up to date!

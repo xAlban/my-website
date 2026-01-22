@@ -86,7 +86,7 @@ export default function MainScreen() {
             ref={(el) => {
               contentRefs.current[section.id] = el;
             }}
-            className="flex flex-col justify-items-start w-full min-h-svh md:min-h-[80svh] snap-start"
+            className="flex flex-col justify-center w-full min-h-svh md:min-h-svh snap-start"
           >
             {section.content}
           </div>
