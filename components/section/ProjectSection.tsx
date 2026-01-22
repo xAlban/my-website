@@ -15,14 +15,17 @@ const projects = [
       "Front-end development of an innovative virtual dressing experience.",
       "Direct integration into client websites.",
     ],
+    imgSrc: "/sauter_modulo_6.jpeg",
   },
   {
     title: "IoT Mobile App with Augmented Reality",
     description: ["Front-end development and communication with IoT devices"],
+    imgSrc: "/sauter_modulo_6.jpeg",
   },
   {
     title: "Maybe yours ?",
     description: ["Contact me for more info"],
+    imgSrc: "/sauter_modulo_6.jpeg",
   },
 ];
 
@@ -42,21 +45,18 @@ export default function ProjectSection() {
         >
           <CarouselContent className="min-h-[50svh]">
             {projects.map((project, index) => (
-              <CarouselItem
-                key={index}
-                className="pl-4 basis-[85%] md:basis-[30%]"
-              >
-                <div className="h-full border rounded-xl bg-card text-card-foreground shadow-sm bg-white/5 flex flex-col overflow-hidden">
-                  <div className="aspect-square w-full relative">
+              <CarouselItem key={index} className="basis-[85%] md:basis-[30%]">
+                <div className="h-full flex flex-col overflow-hidden p-6">
+                  <div className="h-[300px] w-full relative">
                     <Image
-                      src="/profile_pic.jpg"
+                      src={project.imgSrc}
                       alt={project.title}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 85vw, 30vw"
                     />
                   </div>
-                  <div className="p-6 flex flex-col flex-1">
+                  <div className="flex flex-col flex-1">
                     <h3 className="text-2xl mb-4 min-h-[64px] flex items-center">
                       {project.title}
                     </h3>
@@ -70,8 +70,12 @@ export default function ProjectSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
+          {projects.length > 3 && (
+            <>
+              <CarouselPrevious className="hidden md:flex -left-4" />
+              <CarouselNext className="hidden md:flex -right-4" />
+            </>
+          )}
         </Carousel>
       </div>
     </div>

@@ -78,7 +78,7 @@ export default function MainScreen() {
       </div>
 
       {/* Main Content */}
-      <div className="w-full text-white px-8 flex flex-col pb-8 bg-custom-gray justify-center items-center">
+      <div className="w-full text-white flex flex-col pb-8 bg-custom-gray justify-center items-center">
         {SECTIONS.map((section) => (
           <div
             key={section.id}
@@ -86,7 +86,7 @@ export default function MainScreen() {
             ref={(el) => {
               contentRefs.current[section.id] = el;
             }}
-            className={`flex flex-col justify-center w-full h-full min-h-svh snap-start`}
+            className={`flex flex-col justify-center w-full h-full min-h-svh snap-start ${section.id === "projects" ? "" : "px-8"}`}
           >
             {section.content}
           </div>
