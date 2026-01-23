@@ -15,7 +15,7 @@ const projects = [
       "Front-end development of an innovative virtual dressing experience.",
       "Direct integration into client websites.",
     ],
-    imgSrc: "/sauter_modulo_6.jpeg",
+    imgSrc: "/screen_experience_veesual_desktop.png",
   },
   {
     title: "IoT Mobile App with Augmented Reality",
