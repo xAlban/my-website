@@ -52,7 +52,7 @@ export default function ProjectSection() {
                       src={project.imgSrc}
                       alt={project.title}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 768px) 85vw, 30vw"
                     />
                   </div>
