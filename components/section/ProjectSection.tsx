@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -7,8 +6,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Project, ProjectCard } from "@/components/ProjectCard";
 
-const projects = [
+const projects: Project[] = [
   {
     title: "Virtual dressing experiences for e-commerce platforms",
     description: [
@@ -48,38 +48,7 @@ export default function ProjectSection() {
                 key={index}
                 className="basis-[85%] md:basis-[30%] max-w-[500px]"
               >
-                <div className="h-full flex flex-col overflow-hidden p-6">
-                  <div
-                    className={`h-[300px] w-full relative flex justify-center items-center ${project.onlyTitle ? "border-white border-4" : ""}`}
-                  >
-                    {project.imgSrc && (
-                      <Image
-                        src={project.imgSrc}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 85vw, 30vw"
-                      />
-                    )}
-                    {project.onlyTitle && (
-                      <h3 className="uppercase p-6 text-center">
-                        {project.title}
-                      </h3>
-                    )}
-                  </div>
-                  {project.description && (
-                    <div className="flex flex-col flex-1">
-                      <h3 className="text-2xl mb-4 min-h-[64px] flex items-center">
-                        {project.title}
-                      </h3>
-                      <ul className="list-disc list-inside marker:text-custom-green space-y-2">
-                        {project.description.map((item, i) => (
-                          <li key={i}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
+                <ProjectCard project={project} />
               </CarouselItem>
             ))}
           </CarouselContent>
