@@ -23,9 +23,8 @@ const projects = [
     imgSrc: "/sauter_modulo_6.jpeg",
   },
   {
-    title: "Maybe yours ?",
-    description: ["Contact me for more info"],
-    imgSrc: "/sauter_modulo_6.jpeg",
+    title: "Maybe yours!",
+    onlyTitle: true,
   },
 ];
 
@@ -35,37 +34,51 @@ export default function ProjectSection() {
       <div className="flex flex-1 max-h-[50%] md:max-h-[70%] items-center w-full px-12 md:px-0 justify-center">
         <h2>PROJECTS</h2>
       </div>
-      <div className="flex flex-col w-full min-h-[50svh] flex-1 justify-center gap-20 md:px-[40px] py-12">
+      <div className="flex flex-col w-full min-h-[50svh] flex-1 justify-center items-center gap-20 md:px-[40px] py-12">
         <Carousel
           opts={{
             align: "start",
             loop: false,
           }}
-          className="w-full h-full"
+          className="w-full h-full max-w-[1800px]"
         >
           <CarouselContent className="min-h-[50svh]">
             {projects.map((project, index) => (
-              <CarouselItem key={index} className="basis-[85%] md:basis-[30%]">
+              <CarouselItem
+                key={index}
+                className="basis-[85%] md:basis-[30%] max-w-[500px]"
+              >
                 <div className="h-full flex flex-col overflow-hidden p-6">
-                  <div className="h-[300px] w-full relative">
-                    <Image
-                      src={project.imgSrc}
-                      alt={project.title}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 85vw, 30vw"
-                    />
+                  <div
+                    className={`h-[300px] w-full relative flex justify-center items-center ${project.onlyTitle ? "border-white border-4" : ""}`}
+                  >
+                    {project.imgSrc && (
+                      <Image
+                        src={project.imgSrc}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 85vw, 30vw"
+                      />
+                    )}
+                    {project.onlyTitle && (
+                      <h3 className="uppercase p-6 text-center">
+                        {project.title}
+                      </h3>
+                    )}
                   </div>
-                  <div className="flex flex-col flex-1">
-                    <h3 className="text-2xl mb-4 min-h-[64px] flex items-center">
-                      {project.title}
-                    </h3>
-                    <ul className="list-disc list-inside marker:text-custom-green space-y-2">
-                      {project.description.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
+                  {project.description && (
+                    <div className="flex flex-col flex-1">
+                      <h3 className="text-2xl mb-4 min-h-[64px] flex items-center">
+                        {project.title}
+                      </h3>
+                      <ul className="list-disc list-inside marker:text-custom-green space-y-2">
+                        {project.description.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </CarouselItem>
             ))}
