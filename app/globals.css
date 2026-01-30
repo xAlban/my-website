@@ -350,7 +350,7 @@ html {
 }
 
 .cyber-glitch::before {
-  text-shadow: -2px 0 var(--custom-purple);
+  text-shadow: -2px 0 black;
   animation: glitch-burst 4s infinite linear;
 }
 
