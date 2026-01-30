@@ -32,7 +32,9 @@ export default function ProjectSection() {
   return (
     <div className="w-full h-full flex flex-col justify-evenly items-center gap-y-5 gap-x-24 text-left pb-4 pt-24">
       <div className="flex flex-1 max-h-[50%] md:max-h-[70%] items-center w-full px-12 md:px-0 justify-center">
-        <h2>PROJECTS</h2>
+        <h2 className="cyber-glitch" data-text="PROJECTS">
+          PROJECTS
+        </h2>
       </div>
       <div className="flex flex-col w-full min-h-[50svh] flex-1 justify-center items-center gap-20 md:px-[40px] py-12">
         <Carousel

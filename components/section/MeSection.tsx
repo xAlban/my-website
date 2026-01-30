@@ -21,7 +21,9 @@ export default function MeSection() {
         <Carousel items={photos.map((photo) => `/photo_carousel/${photo}`)} />
       </div>
       <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 md:px-[40px] py-12">
-        <h2>ABOUT</h2>
+        <h2 className="cyber-glitch" data-text="ABOUT">
+          ABOUT
+        </h2>
         <p className="text-xl md:text-3xl">
           Always on the lookout for the next big thing, I thrive on staying
           ahead of the curve in our fast-evolving digital landscape. I&apos;m
@@ -33,7 +35,9 @@ export default function MeSection() {
           projects and opportunities across the globe.
         </p>
         <div className="flex flex-col gap-4 text-xl md:text-3xl">
-          <h3 className="font-bold text-2xl md:text-4xl">Hobbies</h3>
+          <h3 className="font-bold text-2xl md:text-4xl" data-text="Hobbies">
+            Hobbies
+          </h3>
           <p>Volleyball</p>
           <Link
             href="https://www.flickr.com/photos/200167340@N06/albums"

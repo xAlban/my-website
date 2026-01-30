@@ -67,12 +67,19 @@ export default function MainScreen() {
 
         <div className="absolute bottom-12 left-8 md:left-12 z-10 max-w-5xl">
           <h1 className="text-white font-bold text-3xl md:text-6xl leading-tight drop-shadow-lg flex flex-col items-start gap-2 uppercase">
-            <span>HELLO I&apos;M</span>
+            <span data-text="HELLO I'M">HELLO I&apos;M</span>
             <span className="relative inline-block px-4 py-1 ml-[-16px]">
               <span className="absolute inset-0 bg-custom-green skew-x-[-15deg]" />
-              <span className="relative z-10 text-black">ALBAN ELEZI</span>
+              <span
+                className="relative z-10 text-black cyber-glitch"
+                data-text="ALBAN ELEZI"
+              >
+                ALBAN ELEZI
+              </span>
             </span>
-            <span>SOFTWARE ENGINEER LOOKING FOR WORK</span>
+            <span data-text="SOFTWARE ENGINEER LOOKING FOR WORK">
+              SOFTWARE ENGINEER LOOKING FOR WORK
+            </span>
           </h1>
         </div>
       </div>

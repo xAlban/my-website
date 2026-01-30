@@ -4,11 +4,15 @@ export default function ExperienceSection() {
   return (
     <div className="w-full h-full flex flex-col justify-evenly md:flex-row gap-y-5 gap-x-24 text-left pb-4 pt-24">
       <div className="flex flex-1 max-w-[1000px] max-h-[50%] md:max-h-[70%] items-center">
-        <h2>EXPERIENCES</h2>
+        <h2 className="cyber-glitch" data-text="EXPERIENCES">
+          EXPERIENCES
+        </h2>
       </div>
       <div className="flex flex-col max-w-[1000px] flex-1 justify-center gap-20 md:px-[40px] py-12">
         <div>
-          <h3>Full Stack Developer @Veesual</h3>
+          <h3 data-text="Full Stack Developer @Veesual">
+            Full Stack Developer @Veesual
+          </h3>
           <div className="text-xl">November 2021 - August 2025</div>
         </div>
         <ul className="list-disc list-inside marker:text-custom-green">
@@ -21,7 +25,9 @@ export default function ExperienceSection() {
           </li>
         </ul>
         <div>
-          <h3>Software Engineer @Actimage GmbH</h3>
+          <h3 data-text="Software Engineer @Actimage GmbH">
+            Software Engineer @Actimage GmbH
+          </h3>
           <div className="text-xl">August 2019 - November 2021</div>
         </div>
         <ul className="list-disc list-inside marker:text-custom-green">

@@ -30,12 +30,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
         )}
         {project.onlyTitle && (
-          <h3 className="uppercase p-6 text-center">{project.title}</h3>
+          <h3 className="uppercase p-6 text-center" data-text={project.title}>
+            {project.title}
+          </h3>
         )}
       </div>
       {project.description && (
         <div className="flex flex-col flex-1">
-          <h3 className="text-2xl mb-4 min-h-[64px] flex items-center">
+          <h3
+            className="text-2xl mb-4 min-h-[64px] flex items-center"
+            data-text={project.title}
+          >
             {project.title}
           </h3>
           <ul className="list-disc list-inside marker:text-custom-green space-y-2">
