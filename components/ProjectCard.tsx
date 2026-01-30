@@ -36,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         )}
       </div>
       {project.description && (
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col flex-1 pt-4">
           <h3
             className="text-2xl mb-4 min-h-[64px] flex items-center"
             data-text={project.title}
