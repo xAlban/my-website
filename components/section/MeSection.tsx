@@ -24,8 +24,8 @@ export default function MeSection() {
         <h2>ABOUT</h2>
         <p className="text-xl md:text-3xl">
           Always on the lookout for the next big thing, I thrive on staying
-          ahead of the curve in our fast-evolving digital landscape. I&apos;m committed to continuous learning and technical
-          excellence.
+          ahead of the curve in our fast-evolving digital landscape. I&apos;m
+          committed to continuous learning and technical excellence.
           <br />
           <br />
           My passion for technology is deeply rooted in its global impact, and

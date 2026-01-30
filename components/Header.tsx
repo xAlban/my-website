@@ -7,31 +7,8 @@ import { Button } from "@/components/ui/button";
 import { useActiveSection } from "@/context/ActiveSectionContext";
 
 export default function Header() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { activeSection } = useActiveSection();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      // Show header if at the top, or scrolling up
-      // Hide header if scrolling down and not at the top
-      if (currentScrollY <= 0) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsVisible(false);
-      } else if (currentScrollY < lastScrollY) {
-        setIsVisible(true);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
@@ -65,8 +42,7 @@ export default function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-100 flex items-center justify-between px-6 h-16 bg-black transition-transform duration-300 ease-in-out",
-          isVisible || isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+          "fixed top-0 left-0 right-0 z-100 flex items-center justify-between px-6 h-16 bg-black transition-transform duration-300 ease-in-out translate-y-0"
         )}
       >
         <div className="flex flex-col z-110 relative">
